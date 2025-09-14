@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import HeritageSection from "@/components/HeritageSection";
-import StudioSection from "@/components/StudioSection";
+import EnhancedStudioSection from "@/components/EnhancedStudioSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,7 +11,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <HeritageSection />
-        <StudioSection />
+        <EnhancedStudioSection />
       </main>
       <Footer />
     </div>
