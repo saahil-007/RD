@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Disease Prediction (with Mapping)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-field {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="number"], select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: gray;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d1fae5;
+      border-left: 6px solid #10b981;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .error {
+      background-color: #fecaca;
+      border-left-color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Disease Prediction</h1>
+
+    <form id="predictForm">
+      <div class="form-field">
+        <label for="Age">Age</label>
+        <input type="number" id="Age" name="Age" value="30" required />
+      </div>
+
+      <div class="form-field">
+        <label for="ECG_Category">ECG Category (numeric)</label>
+        <input type="number" id="ECG_Category" name="ECG_Category" value="0" required />
+      </div>
+
+      <div class="form-field">
+        <label for="Heart_Rate">Heart Rate</label>
+        <input type="number" id="Heart_Rate" name="Heart_Rate" value="70" />
+      </div>
+
+      <div class="form-field">
+        <label for="Systolic_BP">Systolic BP</label>
+        <input type="number" id="Systolic_BP" name="Systolic_BP" value="120" />
+      </div>
+
+      <div class="form-field">
+        <label for="Diastolic_BP">Diastolic BP</label>
+        <input type="number" id="Diastolic_BP" name="Diastolic_BP" value="80" />
+      </div>
+
+      <div class="form-field">
+        <label for="Glucose">Glucose</label>
+        <input type="number" id="Glucose" name="Glucose" value="90" />
+      </div>
+
+      <div class="form-field">
+        <label for="SpO2">SpO2</label>
+        <input type="number" id="SpO2" name="SpO2" value="98" />
+      </div>
+
+      <div class="form-field">
+        <label for="Body_Temperature">Body Temperature</label>
+        <input type="number" id="Body_Temperature" name="Body_Temperature" value="36.8" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="Gender">Gender (numeric)</label>
+        <input type="number" id="Gender" name="Gender" value="0" />
+      </div>
+
+      <!-- Water quality and rest -->
+      <div class="form-field">
+        <label for="temperature_C">temperature_C</label>
+        <input type="number" id="temperature_C" name="temperature_C" value="25.0" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="turbidity_NTU">turbidity_NTU</label>
+        <input type="number" id="turbidity_NTU" name="turbidity_NTU" value="1.0" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="pH">pH</label>
+        <input type="number" id="pH" name="pH" value="7.2" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="DO_mg_L">DO_mg_L</label>
+        <input type="number" id="DO_mg_L" name="DO_mg_L" value="7.0" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="BOD_mg_L">BOD_mg_L</label>
+        <input type="number" id="BOD_mg_L" name="BOD_mg_L" value="2.0" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="COD_mg_L">COD_mg_L</label>
+        <input type="number" id="COD_mg_L" name="COD_mg_L" value="8.0" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="nitrate_mg_L">nitrate_mg_L</label>
+        <input type="number" id="nitrate_mg_L" name="nitrate_mg_L" value="3.5" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="phosphate_mg_L">phosphate_mg_L</label>
+        <input type="number" id="phosphate_mg_L" name="phosphate_mg_L" value="0.4" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <label for="TDS_mg_L">TDS_mg_L</label>
+        <input type="number" id="TDS_mg_L" name="TDS_mg_L" value="350" />
+      </div>
+
+      <div class="form-field">
+        <label for="conductivity_uS_cm">conductivity_uS_cm</label>
+        <input type="number" id="conductivity_uS_cm" name="conductivity_uS_cm" value="700" />
+      </div>
+
+      <div class="form-field">
+        <label for="fecal_coliform_CFU_100mL">fecal_coliform_CFU_100mL</label>
+        <input type="number" id="fecal_coliform_CFU_100mL" name="fecal_coliform_CFU_100mL" value="20" />
+      </div>
+
+      <div class="form-field">
+        <label for="WQI">WQI</label>
+        <input type="number" id="WQI" name="WQI" value="85" step="0.1" />
+      </div>
+
+      <div class="form-field">
+        <button type="button" id="predictBtn">Predict Disease</button>
+      </div>
+
+      <div id="result" class="result" style="display:none;"></div>
+
+    </form>
+  </div>
+
+  <script>
+    const API_BASE = "http://localhost:8000";
+
+    document.getElementById("predictBtn").addEventListener("click", async () => {
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "none";
+      resultDiv.textContent = "";
+
+      // gather features
+      const featureIds = [
+        "Age","ECG_Category","Heart_Rate","Systolic_BP","Diastolic_BP","Glucose",
+        "SpO2","Body_Temperature","Gender","temperature_C","turbidity_NTU","pH",
+        "DO_mg_L","BOD_mg_L","COD_mg_L","nitrate_mg_L","phosphate_mg_L","TDS_mg_L",
+        "conductivity_uS_cm","fecal_coliform_CFU_100mL","WQI"
+      ];
+      const features = {};
+      featureIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        let val = el.value;
+        if (el.type === "number") {
+          val = val === "" ? 0 : Number(val);
+        }
+        features[id] = val;
+      });
+
+      resultDiv.textContent = "Predicting...";
+      resultDiv.style.display = "block";
+
+      try {
+        const resp = await fetch(`${API_BASE}/predict`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ features })
+        });
+        if (!resp.ok) {
+          const err = await resp.json();
+          throw new Error(err.detail || resp.statusText);
+        }
+        const data = await resp.json();
+        resultDiv.textContent = `Predicted Disease: ${data.disease}`;
+      } catch (err) {
+        resultDiv.classList.add("error");
+        resultDiv.textContent = `Error: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
