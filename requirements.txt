@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+torch
+torchvision
+scikit-image
+numpy
+opencv-python
+sknw
+networkx

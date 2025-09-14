@@ -1,0 +1,344 @@
+# Product Requirements Document (PRD)
+
+## 1\. Overview
+
+**App/Website Name:** Rangoli Studio
+
+Rangoli Studio is an advanced web application that combines computer vision, AI, and traditional art to digitize, analyze, and generate Rangoli/Kolam patterns. The platform enables users to photograph traditional dot-grid artworks and automatically convert them into precise digital vector formats while preserving the cultural authenticity and mathematical beauty of these geometric designs. Users can also generate new patterns using AI-powered tools that understand the topological rules and aesthetic principles of traditional Rangoli art.
+
+The target audience includes art enthusiasts, cultural preservationists, educators, designers, and anyone interested in traditional Indian geometric art forms. The key problems addressed are: the lack of digital preservation tools for traditional art forms, difficulty in analyzing and understanding the complex mathematical structures of Rangoli patterns, and the need for accessible tools to learn and create authentic geometric designs while respecting cultural traditions.
+
+## 2\. Essential Core Features
+
+### Image Processing & Analysis
+
+* **Photo Upload & Processing**: Upload images via camera or file selection with automatic preprocessing
+* **Dot Grid Detection**: AI-powered detection of underlying dot lattice patterns with grid type classification
+* **Stroke Segmentation**: Automatic separation of artwork strokes from background using advanced computer vision
+* **Pattern Recognition**: Classification of Rangoli families and motif types based on dot count and structure
+
+### Vector Conversion & Export
+
+* **Skeletonization**: Convert pixel-based strokes to mathematical skeleton representations
+* **Graph Extraction**: Transform strokes into node-edge graphs with junction and endpoint detection
+* **Topological Analysis**: Analyze loop structures and encode canonical pattern representations
+* **SVG Export**: Generate clean, scalable vector graphics with customizable stroke styles
+
+### AI-Powered Generation
+
+* **Pattern Generator**: Create new authentic Rangoli designs based on traditional rules and constraints
+* **Style Transfer**: Apply different artistic styles while maintaining topological correctness
+* **Symmetry Tools**: Generate patterns with various symmetry types (rotational, reflective, translational)
+* **Motif Library**: Access to curated collection of traditional pattern elements
+
+### Interactive Design Tools
+
+* **Manual Correction Interface**: Edit and refine AI detections with intuitive drawing tools
+* **Grid Editor**: Adjust dot grid parameters (spacing, orientation, type)
+* **Pattern Builder**: Combine motifs and elements to create custom designs
+* **Real-time Preview**: Live preview of vectorization and generation processes
+
+### Educational & Cultural Features
+
+* **Pattern Analysis Dashboard**: Detailed mathematical and cultural information about detected patterns
+* **Tutorial System**: Step-by-step guides for creating traditional designs
+* **Cultural Context**: Historical and regional information about different Rangoli styles
+* **Community Gallery**: Share and explore patterns created by the community
+
+## 3\. Tech Stack
+
+### Front-End
+
+* **Framework**: React with TypeScript
+* **Styling**: Tailwind CSS for responsive design
+* **Build Tool**: Vite for fast development and optimized builds
+* **Canvas Libraries**: Konva.js or Fabric.js for interactive drawing and SVG manipulation
+* **Image Processing**: Canvas API with WebGL acceleration where possible
+
+### Back-End
+
+* **Database**: Supabase PostgreSQL for user data, pattern metadata, and analytics
+* **Authentication**: Supabase Auth for secure user management
+* **Storage**: Supabase Storage for images, SVG files, and generated patterns
+* **Real-time**: Supabase real-time subscriptions for collaborative features
+
+### AI Integration
+
+* **Computer Vision**: Custom PyTorch models deployed as microservices
+* **Text Analysis**: OpenAI GPT-4o for cultural descriptions and educational content
+* **Pattern Generation**: Hybrid approach combining rule-based algorithms and neural networks
+
+### APIs & Integrations
+
+* **Image Processing API**: Custom FastAPI service for computer vision tasks
+* **Vector Processing**: Server-side SVG optimization and manipulation
+* **Cultural Database API**: Integration with art history and cultural databases
+* **Export Services**: PDF generation and high-resolution rendering services
+
+## 4\. Design Preferences
+
+### Interface
+
+The interface should embody elegance and cultural richness, featuring clean geometric layouts that reflect the mathematical beauty of Rangoli art while maintaining modern usability standards. The design should feel both sophisticated and approachable, with intuitive controls that don't overwhelm the artistic content.
+
+### Color Palette
+
+* **Primary**: Deep Saffron (#FF7722) - reflecting traditional Indian art
+* **Secondary**: Royal Blue (#1E40AF) - providing professional contrast
+* **Accent**: Golden Yellow (#F59E0B) - highlighting interactive elements
+* **Neutrals**: Warm grays and cream tones for backgrounds and text
+
+### Typography
+
+* **Headings**: Poppins - modern, geometric font that complements the mathematical nature
+* **Body Text**: Inter - highly readable for technical content and descriptions
+* **Special Elements**: Devanagari Unicode fonts for authentic cultural text when needed
+
+## 5\. All Screens/Pages
+
+### Home Page (`/`)
+
+* Hero section with animated Rangoli pattern background
+* Feature showcase with interactive demos
+* Quick start buttons (Upload Image, Generate Pattern, Explore Gallery)
+* Cultural introduction section with rotating pattern examples
+* Navigation to main application areas
+* Footer with cultural information and credits
+
+### Authentication Pages
+
+#### Sign Up (`/signup`)
+
+* Email/password registration form
+* Google OAuth integration
+* Terms of service with cultural sensitivity guidelines
+* Redirect to onboarding flow
+
+#### Sign In (`/signin`)
+
+* Login form with email/password
+* Social authentication options
+* Password reset functionality
+* Remember me option
+
+#### Profile Settings (`/profile`)
+
+* User information management
+* Preference settings for pattern generation
+* Cultural background selection
+* Export format preferences
+* Account deletion options
+
+### Main Application Interface (`/studio`)
+
+#### Upload & Analysis Panel
+
+* Drag-and-drop image upload area
+* Camera capture button for mobile devices
+* Image preview with zoom and pan controls
+* Processing status indicators
+* Manual correction tools overlay
+
+#### Detection Results Panel
+
+* Detected dot grid visualization with adjustable parameters
+* Stroke segmentation preview with accuracy metrics
+* Pattern classification results with confidence scores
+* Topological analysis display (loops, junctions, symmetries)
+* Manual adjustment controls for each detection type
+
+#### Vector Output Panel
+
+* SVG preview with real-time rendering
+* Style customization controls (stroke width, color, smoothing)
+* Export options (SVG, PDF, PNG, AI)
+* Comparison view (original vs. vectorized)
+* Quality metrics and optimization suggestions
+
+### Pattern Generator (`/generate`)
+
+#### Grid Configuration
+
+* Interactive dot grid designer
+* Grid type selector (square, triangular, hexagonal)
+* Spacing and size controls
+* Symmetry options panel
+
+#### Style Selection
+
+* Traditional pattern library browser
+* Regional style categories
+* Complexity level selector
+* Color scheme options
+
+#### Generation Results
+
+* Generated pattern preview
+* Iteration controls for AI refinement
+* Style transfer options
+* Save and export functionality
+
+### Gallery & Community (`/gallery`)
+
+#### Public Gallery
+
+* Grid layout of featured patterns
+* Filter options (region, complexity, date)
+* Search functionality with visual similarity
+* Pattern detail modal with cultural information
+
+#### My Patterns (`/gallery/my-patterns`)
+
+* Personal pattern collection
+* Organization tools (folders, tags, favorites)
+* Sharing controls and privacy settings
+* Batch operations for multiple patterns
+
+### Educational Hub (`/learn`)
+
+#### Pattern Analysis (`/learn/analysis`)
+
+* Interactive pattern breakdown tools
+* Mathematical explanations of geometric principles
+* Cultural significance descriptions
+* Regional variation comparisons
+
+#### Tutorials (`/learn/tutorials`)
+
+* Step-by-step pattern creation guides
+* Video tutorials with interactive elements
+* Progressive difficulty levels
+* Traditional techniques documentation
+
+#### Cultural Context (`/learn/culture`)
+
+* Historical timeline of Rangoli traditions
+* Regional variations and their meanings
+* Festival and occasion-specific patterns
+* Contemporary adaptations and innovations
+
+### API Documentation (`/api-docs`)
+
+* Interactive API explorer
+* Authentication guides
+* Rate limiting information
+* Example requests and responses
+* SDK downloads and integration guides
+
+## 6\. App Menu and Navigation Structure
+
+### Primary Navigation (Horizontal Top Bar)
+
+* **Logo/Home**: Returns to main landing page
+* **Studio**: Access to main application workspace
+* **Generate**: AI-powered pattern creation tools
+* **Gallery**: Community and personal pattern collections
+* **Learn**: Educational resources and tutorials
+* **Profile Menu**: User account and settings dropdown
+
+### Secondary Navigation (Context-Sensitive Sidebars)
+
+#### Studio Mode Sidebar
+
+* Upload new image
+* Processing options
+* Detection parameters
+* Export tools
+* History of recent analyses
+
+#### Generator Mode Sidebar
+
+* Grid configuration
+* Style libraries
+* Generation parameters
+* Save options
+
+### Mobile Navigation (Progressive Web App)
+
+* **Bottom Tab Bar**: Studio, Generate, Gallery, Learn, Profile
+* **Hamburger Menu**: Additional options and settings
+* **Floating Action Button**: Quick access to camera capture
+* **Swipe Gestures**: Navigate between analysis steps
+
+### Breadcrumb Navigation
+
+* Visible in all secondary pages
+* Shows current location within the application hierarchy
+* Clickable path segments for quick navigation
+
+## 7\. User Flow
+
+### Primary User Journey: Image Analysis and Vectorization
+
+1. **Entry Point**
+    * User lands on homepage and clicks "Upload Image" or navigates to Studio
+    * Alternatively, uses camera capture on mobile device
+2. **Image Upload**
+    * User drags and drops image or selects from file browser
+    * System displays upload progress and image preview
+    * Auto-rotation and basic preprocessing applied
+3. **Initial Processing**
+    * Loading indicator shows AI analysis in progress
+    * System performs dot detection, stroke segmentation, and pattern recognition
+    * Results appear in real-time as processing completes
+4. **Review and Refinement**
+    * User examines detected dot grid overlaid on original image
+    * Manual adjustment tools allow correction of misdetected dots
+    * Stroke segmentation can be refined using brush tools
+    * Pattern classification results displayed with confidence scores
+5. **Topological Analysis**
+    * System generates graph representation of the pattern
+    * User reviews detected loops, junctions, and symmetries
+    * Manual corrections possible through graph editing interface
+6. **Vector Generation**
+    * AI converts pixel data to smooth vector curves
+    * User adjusts style parameters (stroke width, smoothing, color)
+    * Real-time preview updates with each modification
+7. **Export and Save**
+    * User selects desired export format and resolution
+    * Pattern saved to personal gallery with metadata
+    * Options to share publicly or keep private
+
+### Secondary User Journey: AI Pattern Generation
+
+1. **Generator Access**
+    * User navigates to Generate section from main menu
+    * Prompted to select generation type (from scratch or based on existing pattern)
+2. **Grid Configuration**
+    * Interactive grid designer allows setting up dot lattice
+    * User selects grid type, spacing, and overall dimensions
+    * Preview shows dot placement in real-time
+3. **Style Selection**
+    * Browse traditional pattern library organized by region and complexity
+    * Select base motifs or let AI choose appropriate elements
+    * Cultural context information provided for each style
+4. **Generation Process**
+    * AI creates pattern following traditional topological rules
+    * Multiple variations generated simultaneously
+    * User can iterate and refine results
+5. **Customization**
+    * Generated pattern can be modified using built-in drawing tools
+    * Style transfer options apply different aesthetic treatments
+    * Color schemes and stroke styles adjustable
+6. **Finalization**
+    * User reviews final pattern and cultural accuracy
+    * Export in multiple formats
+    * Add to personal collection with custom tags and notes
+
+### Tertiary User Journey: Learning and Exploration
+
+1. **Educational Entry**
+    * User accesses Learn section to understand Rangoli traditions
+    * Tutorial system guides through pattern creation principles
+2. **Interactive Analysis**
+    * Upload or select existing patterns for detailed breakdown
+    * System explains mathematical and cultural aspects
+    * Comparative analysis with traditional examples
+3. **Hands-on Practice**
+    * Step-by-step guided pattern creation
+    * Real-time feedback on technique and authenticity
+    * Progress tracking through increasing complexity levels
+4. **Community Engagement**
+    * Share created patterns with community
+    * Participate in cultural discussions and pattern challenges
+    * Contribute to collaborative cultural documentation efforts
