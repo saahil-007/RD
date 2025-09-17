@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+opencv-python
+opencv-contrib-python
+scikit-image
+scipy
+networkx
+numpy
+matplotlib
+pillow
+torch
+torchvision
+sknw
