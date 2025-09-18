@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Pillow
+numpy
+opencv-python
+python-dotenv
+scipy
+scikit-learn

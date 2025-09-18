@@ -1,0 +1,415 @@
+# Product Requirements Document (PRD)
+
+## 1. Overview
+
+**App/Website Name:** RangDarshan Rangoli Studio
+
+**Project Version:** v1.0
+**Last Updated:** January 2025
+**Document Owner:** Development Team
+
+### Executive Summary
+
+RangDarshan Rangoli Studio is an innovative AI-powered web application that bridges traditional Indian art with modern technology. The platform enables users to analyze, learn, and create authentic rangoli/kolam patterns through computer vision, cultural heritage data, and interactive tutorials.
+
+### Mission Statement
+
+"To preserve, understand, and democratize the ancient art of rangoli through cutting-edge AI technology while maintaining cultural authenticity and respect for tradition."
+
+### Problem Statement
+
+Traditional rangoli art faces several challenges:
+- **Cultural Preservation:** Risk of losing intricate traditional patterns and techniques
+- **Learning Barriers:** Difficulty for beginners to understand complex geometric principles
+- **Analysis Gaps:** Lack of tools to mathematically analyze pattern structures
+- **Accessibility:** Limited resources for learning authentic techniques across different regions
+
+### Solution Overview
+
+RangDarshan addresses these challenges by providing:
+- AI-powered image analysis for pattern recognition and geometric analysis
+- Interactive tutorials with step-by-step guidance
+- Cultural heritage database with regional variations
+- Modern web interface accessible to global audiences
+
+### Target Audience
+
+**Primary Users:**
+- Art enthusiasts and hobbyists
+- Students and educators
+- Cultural researchers and preservationists
+- Design professionals seeking inspiration
+
+**Secondary Users:**
+- Heritage institutions
+- Tourism and cultural organizations
+- Traditional artists and craftspeople
+
+## 2. Core Features & Functionality
+
+### 2.1 AI-Powered Image Analysis
+
+**Image Upload & Processing**
+- Multi-format image upload (JPG, PNG, WEBP)
+- Camera capture support for mobile devices
+- Automatic image preprocessing and optimization
+- Real-time processing status updates
+
+**Pattern Recognition Engine**
+- Advanced computer vision algorithms for pattern detection
+- Geometric analysis of symmetry and structure
+- Cultural classification based on regional styles
+- Mathematical analysis of proportions and angles
+
+**Analysis Reports**
+- Detailed breakdown of pattern elements
+- Cultural significance and regional origin identification
+- Geometric properties and mathematical insights
+- Suggestions for improvement and variations
+
+### 2.2 Interactive Learning Platform
+
+**Step-by-Step Tutorials**
+- Animated drawing instructions
+- Progressive difficulty levels
+- Regional technique variations
+- Cultural context for each pattern
+
+**Heritage Database**
+- Comprehensive collection of traditional patterns
+- Regional variations (Tamil Nadu, Maharashtra, Bengal, Kerala)
+- Historical context and cultural significance
+- Festival and occasion-specific designs
+
+### 2.3 Creative Studio Tools
+
+**Pattern Library**
+- Curated collection of authentic designs
+- Search and filter by region, complexity, occasion
+- High-quality pattern previews
+- Cultural annotations and context
+
+**Design Suggestions**
+- AI-powered recommendations based on uploaded images
+- Style variations and modifications
+- Complexity adjustments for different skill levels
+- Cultural authenticity verification
+
+### 2.4 Educational Resources
+
+**Cultural Heritage Section**
+- Historical background of rangoli traditions
+- Regional styles and their unique characteristics
+- Symbolic meanings and cultural significance
+- Contemporary adaptations and innovations
+
+**Learning Materials**
+- Downloadable practice sheets
+- Video tutorials and demonstrations
+- Cultural stories and mythology connections
+- Traditional techniques and modern interpretations
+
+## 3. Technical Architecture
+
+### 3.1 Frontend Technology Stack
+
+**Core Framework**
+- **React 18.3.1** with TypeScript for type-safe development
+- **Vite 5.4.19** for fast development and optimized builds
+- **React Router 6.30.1** for client-side routing
+
+**UI & Styling**
+- **Tailwind CSS 3.4.17** for utility-first styling
+- **Radix UI** components for accessible UI primitives
+- **shadcn/ui** for pre-built component library
+- **Lucide React** for consistent iconography
+
+**State Management & Data Fetching**
+- **TanStack Query 5.83.0** for server state management
+- **React Hook Form 7.61.1** for form handling
+- **Zod 3.25.76** for schema validation
+
+### 3.2 Backend Technology Stack
+
+**Core Framework**
+- **FastAPI** for high-performance REST API
+- **Uvicorn** as ASGI server
+- **Python 3.8+** runtime environment
+
+**Computer Vision & AI**
+- **OpenCV** for image processing and computer vision
+- **scikit-image** for advanced image analysis
+- **NumPy** for numerical computations
+- **NetworkX** for graph-based pattern analysis
+- **SciPy** for mathematical operations
+
+**API Features**
+- CORS-enabled for cross-origin requests
+- File upload support with multipart handling
+- Streaming responses for real-time analysis
+- Error handling and status reporting
+
+### 3.3 Development & Deployment
+
+**Development Tools**
+- **TypeScript** for static type checking
+- **ESLint** for code quality
+- **PostCSS** with Autoprefixer
+- **Lovable Platform** integration
+
+**Build & Deployment**
+- Vite-based build system
+- Environment-specific configurations
+- Hot module replacement for development
+- Production optimization and minification
+
+## 4. Design System & User Experience
+
+### 4.1 Design Philosophy
+
+**Core Principles**
+- **Cultural Authenticity:** Respect for traditional art forms and cultural sensitivity
+- **Modern Accessibility:** Contemporary web standards with inclusive design
+- **Geometric Harmony:** Visual design reflecting mathematical beauty of rangoli
+- **Intuitive Learning:** Progressive disclosure and guided user experiences
+
+### 4.2 Visual Design Language
+
+**Color Palette**
+- **Heritage Colors:** Deep saffron, royal blue, golden yellow
+- **Gradient Themes:** Sunset, mandala, and heritage gradients
+- **Neutral Foundation:** Warm grays and cream tones
+- **Cultural Accents:** Traditional Indian color combinations
+
+**Typography System**
+- **Display Font:** Playfair Display for elegant headings
+- **Body Font:** Inter for optimal readability
+- **UI Elements:** System font stack for consistency
+- **Cultural Text:** Unicode support for regional scripts
+
+**Visual Elements**
+- Animated mandala backgrounds
+- Geometric pattern overlays
+- Cultural artifact imagery
+- Sacred geometry inspiration
+
+### 4.3 User Experience Guidelines
+
+**Interaction Patterns**
+- Progressive enhancement for mobile-first design
+- Touch-friendly interfaces for tablet users
+- Keyboard navigation for accessibility
+- Smooth animations and transitions
+
+**Information Architecture**
+- Clear visual hierarchy
+- Contextual help and guidance
+- Cultural sensitivity in content presentation
+- Multi-language considerations for future expansion
+
+## 5. Application Structure & User Interface
+
+### 5.1 Main Application Pages
+
+**Home Page (`/`)**
+- Hero section with animated rangoli backgrounds
+- Feature showcase highlighting AI analysis, cultural heritage, and tutorials
+- Quick access to main functionalities
+- Cultural introduction and educational content
+- Navigation to specialized sections
+
+**Studio Section**
+- Enhanced image upload interface with drag-and-drop
+- Real-time analysis processing with progress indicators
+- AI-powered pattern recognition and geometric analysis
+- Cultural insights and pattern classification
+- Interactive tutorials and step-by-step guidance
+
+**Heritage Gallery**
+- Comprehensive collection of traditional patterns
+- Regional categorization (Tamil Nadu, Maharashtra, Bengal, Kerala)
+- Cultural context and historical significance
+- High-quality pattern previews and detailed information
+- Search and filtering capabilities
+
+**Learning Hub**
+- Interactive tutorials with animated instructions
+- Progressive skill development paths
+- Cultural education and historical context
+- Practice exercises and worksheets
+- Community learning features
+
+### 5.2 Navigation & User Flow
+
+**Primary Navigation**
+- Clean, intuitive header navigation
+- Mobile-responsive design with hamburger menu
+- Contextual breadcrumbs for deep navigation
+- Quick access to main features
+
+**User Journey Flow**
+1. **Discovery:** Users land on homepage and explore features
+2. **Engagement:** Upload image or browse heritage gallery
+3. **Analysis:** AI processes image and provides insights
+4. **Learning:** Access tutorials and cultural information
+5. **Practice:** Apply learned techniques with guided exercises
+6. **Sharing:** Explore community features and share creations
+
+### 5.3 Mobile Experience
+
+**Responsive Design**
+- Mobile-first approach with touch-optimized interfaces
+- Camera integration for direct image capture
+- Swipe gestures for navigation
+- Optimized loading for mobile networks
+
+**Progressive Web App Features**
+- Offline capability for core features
+- App-like experience on mobile devices
+- Push notifications for learning reminders
+- Home screen installation option
+
+## 6. User Experience & Interaction Design
+
+### 6.1 Primary User Journeys
+
+**Journey 1: Image Analysis & Learning**
+1. **Entry:** User arrives at homepage, clicks "Explore RangDarshan"
+2. **Upload:** Drag-and-drop image or use camera capture
+3. **Processing:** Real-time AI analysis with progress updates
+4. **Results:** View detailed analysis report with cultural insights
+5. **Learning:** Access related tutorials and cultural information
+6. **Practice:** Use suggested exercises to improve skills
+
+**Journey 2: Heritage Exploration**
+1. **Discovery:** Navigate to Heritage Gallery
+2. **Browse:** Explore patterns by region, festival, or complexity
+3. **Deep Dive:** Select pattern for detailed cultural context
+4. **Tutorial:** Access step-by-step creation instructions
+5. **Practice:** Follow interactive guidance with feedback
+6. **Share:** Save favorite patterns and share with community
+
+**Journey 3: Skill Development**
+1. **Assessment:** Start with beginner-friendly patterns
+2. **Guidance:** Follow animated tutorials with cultural context
+3. **Practice:** Create patterns with AI-powered feedback
+4. **Progress:** Track improvement through complexity levels
+5. **Mastery:** Advance to traditional regional styles
+6. **Teaching:** Share knowledge with other learners
+
+### 6.2 Accessibility & Inclusion
+
+**Universal Design Principles**
+- WCAG 2.1 AA compliance for accessibility
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast mode availability
+- Multi-language support preparation
+
+**Cultural Sensitivity**
+- Respectful presentation of traditional art forms
+- Accurate cultural context and attributions
+- Collaboration with cultural experts and practitioners
+- Community feedback integration for authenticity
+
+### 6.3 Performance & Optimization
+
+**Technical Performance**
+- Fast loading times (<3 seconds for core features)
+- Optimized image processing for mobile devices
+- Progressive loading for large heritage galleries
+- Offline capability for essential features
+
+**User Experience Optimization**
+- Intuitive onboarding flow
+- Contextual help and guidance
+- Error prevention and recovery
+- Seamless cross-device experience
+
+## 7. Development & Deployment Strategy
+
+### 7.1 Development Workflow
+
+**Local Development Setup**
+- Node.js 16+ and Python 3.8+ requirements
+- Separate frontend and backend development servers
+- Hot reload for both React and FastAPI
+- Environment configuration for development/production
+
+**Code Quality & Standards**
+- TypeScript for type safety
+- ESLint and Prettier for code formatting
+- Git hooks for pre-commit validation
+- Component-driven development with Storybook (future)
+
+### 7.2 Deployment Architecture
+
+**Frontend Deployment**
+- Lovable platform integration for seamless deployment
+- CDN optimization for global performance
+- Progressive Web App capabilities
+- Custom domain support
+
+**Backend Services**
+- Scalable API deployment with auto-scaling
+- Docker containerization for consistent environments
+- Load balancing for high availability
+- Monitoring and logging for production reliability
+
+### 7.3 Security & Privacy
+
+**Data Protection**
+- Secure image upload with validation
+- Privacy-focused analytics
+- GDPR compliance for global users
+- Cultural sensitivity in data handling
+
+**Technical Security**
+- HTTPS enforcement
+- CORS policy configuration
+- Input validation and sanitization
+- Rate limiting for API protection
+
+## 8. Success Metrics & Analytics
+
+### 8.1 Key Performance Indicators
+
+**User Engagement**
+- Monthly active users
+- Session duration and depth
+- Feature adoption rates
+- Tutorial completion rates
+
+**Cultural Impact**
+- Heritage patterns explored
+- Educational content engagement
+- Cultural accuracy feedback
+- Community contributions
+
+**Technical Performance**
+- Analysis accuracy rates
+- Processing speed optimization
+- Mobile usage patterns
+- Error rates and resolution times
+
+### 8.2 Future Enhancements
+
+**Phase 2 Features**
+- Advanced pattern generation with AI
+- Collaborative learning features
+- Regional expert contributions
+- Extended cultural database
+
+**Phase 3 Vision**
+- Multi-platform mobile apps
+- AR/VR integration for immersive learning
+- Global cultural art form expansion
+- Educational institution partnerships
+
+---
+
+**Document Information**
+- Version: 1.0
+- Last Updated: January 2025
+- Next Review: March 2025
+- Stakeholders: Development Team, Cultural Advisors, User Research Team
