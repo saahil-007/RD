@@ -4,7 +4,7 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)](https://fastapi.tiangolo.com/)
+[![Flask](https://img.shields.io/badge/Flask-Latest-green)](https://flask.palletsprojects.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)](https://www.typescriptlang.org/)
 
 ## 🌟 What is RangDarshan?
@@ -18,7 +18,7 @@ RangDarshan Rangoli Studio is an innovative AI-powered web application that brin
 - 🏛️ **Heritage Gallery** - Explore traditional patterns from different Indian regions
 - 🎓 **Cultural Learning** - Understand the history and significance of rangoli art
 - 📱 **Mobile-Friendly** - Responsive design that works on all devices
-- 🌐 **Modern Web Tech** - Built with React, TypeScript, and FastAPI
+- 🌐 **Modern Web Tech** - Built with React, TypeScript, and Flask
 
 ## 🚀 Quick Start Guide
 
@@ -38,10 +38,10 @@ Before you begin, make sure you have the following installed on your computer:
 
 ```bash
 # Clone the project to your computer
-git clone https://github.com/your-username/rangdarshan-ai-creations.git
+git clone https://github.com/saahil-007/RD.git
 
 # Navigate to the project folder
-cd rangdarshan-ai-creations-main
+cd RD-master
 ```
 
 #### Step 2: Set Up the Frontend
@@ -70,11 +70,11 @@ cd backend
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Start the FastAPI server
-uvicorn main:app --reload
+# Start the Flask server
+python main.py
 ```
 
-Your backend API will be running at `http://localhost:8000` 🚀
+Your backend API will be running at `http://localhost:5000` 🚀
 
 ### 🌐 Access the Application
 
@@ -87,7 +87,7 @@ Once both servers are running:
 ## 🏗️ Project Structure
 
 ```
-rangdarshan-ai-creations-main/
+RD-master/
 ├── 📁 frontend/              # React TypeScript frontend
 │   ├── 📁 src/
 │   │   ├── 📁 components/    # Reusable UI components
@@ -96,11 +96,11 @@ rangdarshan-ai-creations-main/
 │   │   └── 📁 lib/           # Utility functions
 │   ├── 📄 package.json      # Frontend dependencies
 │   └── 📄 vite.config.ts    # Vite configuration
-├── 📁 backend/               # Python FastAPI backend
+├── 📁 backend/               # Python Flask backend
 │   ├── 📄 main.py           # Main API server
-│   ├── 📄 image_processing.py # AI image analysis
-│   ├── 📄 heritage_data.py   # Cultural pattern database
-│   └── 📄 requirements.txt   # Python dependencies
+│   ├── 📄 analysis_orchestrator.py # AI image analysis orchestrator
+│   ├── 📄 requirements.txt   # Python dependencies
+│   └── 📁 services/         # Business logic services
 ├── 📄 README.md             # This file!
 └── 📄 prd.txt               # Product Requirements Document
 ```
@@ -136,10 +136,7 @@ npm run lint         # Run ESLint for code quality
 ```
 
 #### Backend API Endpoints
-- `POST /analyze` - Upload and analyze rangoli images
-- `POST /new_analyze` - Streaming analysis with real-time updates
-- `POST /suggestions` - Get AI-powered pattern suggestions
-- `GET /heritage` - Access cultural heritage database
+- `POST /analyze` - Upload and analyze rangoli images (streaming response)
 
 ## 🛠️ Technology Stack
 
@@ -158,7 +155,7 @@ npm run lint         # Run ESLint for code quality
 
 | Technology | Purpose |
 |------------|----------|
-| **FastAPI** | REST API Framework |
+| **Flask** | REST API Framework |
 | **OpenCV** | Computer Vision |
 | **NumPy** | Numerical Computing |
 | **scikit-image** | Image Processing |
@@ -192,7 +189,8 @@ npm run lint         # Run ESLint for code quality
 ```bash
 # Clear npm cache and reinstall
 npm cache clean --force
-rm -rf node_modules package-lock.json
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
 npm install
 npm run dev
 ```
@@ -206,12 +204,12 @@ pip install -r requirements.txt
 python --version
 
 # Restart the server
-uvicorn main:app --reload
+python main.py
 ```
 
 **Port already in use?**
 - Frontend (5173): `npm run dev -- --port 3000`
-- Backend (8000): `uvicorn main:app --reload --port 8001`
+- Backend (5000): `python main.py --port 5001`
 
 ### 🆘 Need Help?
 
@@ -296,8 +294,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 - **Project Website**: [RangDarshan Studio](https://your-domain.com)
-- **GitHub Issues**: [Report Issues](https://github.com/your-username/rangdarshan-ai-creations/issues)
-- **Discussions**: [Join Conversations](https://github.com/your-username/rangdarshan-ai-creations/discussions)
+- **GitHub Issues**: [Report Issues](https://github.com/saahil-007/RD/issues)
+- **Discussions**: [Join Conversations](https://github.com/saahil-007/RD/discussions)
 
 ---
 
