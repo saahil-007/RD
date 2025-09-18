@@ -1,4 +1,4 @@
-# 🎨 RangDarshan Rangoli Studio
+#🎨 RangDarshan Rangoli Studio
 
 *Where Tradition Meets Design Intelligence*
 
